@@ -6,7 +6,7 @@ os.environ["HTTP_PROXY"] = "http://127.0.0.1:7890"
 os.environ["HTTPS_PROXY"] = "http://127.0.0.1:7890"
 
 # 初始化客户端
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="")
 
 # 测试一个 Chat Completion
 resp = client.chat.completions.create(
@@ -17,3 +17,4 @@ resp = client.chat.completions.create(
 )
 
 print(resp.choices[0].message)
+
