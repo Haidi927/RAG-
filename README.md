@@ -1,6 +1,6 @@
-# RAG-
-本项目旨在通过 RAG（检索增强生成, Retrieval-Augmented Generation）+ 大语言模型，为食品营养领域构建弱标注数据集。 模块能自动切分文本、检索背景知识，并优化 Prompt，减少人工标注成本，为下游实体关系抽取（NER + RE）任务提供高质量训练样本。
 # RAG 驱动的实体关系抽取弱标注模块
+本项目旨在通过 RAG（检索增强生成, Retrieval-Augmented Generation）+ 大语言模型，为食品营养领域构建弱标注数据集。 模块能自动切分文本、检索背景知识，并优化 Prompt，减少人工标注成本，为下游实体关系抽取（NER + RE）任务提供高质量训练样本。
+
 
 ## 📌 项目简介
 本项目旨在通过 **RAG（检索增强生成, Retrieval-Augmented Generation）+ 大语言模型**，为食品营养领域构建弱标注数据集。  
