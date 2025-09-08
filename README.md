@@ -26,23 +26,15 @@ conda activate rag_env
 pip install -r requirements.txt
 
 RAG-Weakly-Supervised-Extraction/
-│── README.md                 # 项目说明文档
-│── requirements.txt          # 依赖库列表
-│── environment.yml           # conda 环境文件（可选）
-│── data/                     # 示例数据
-│── retriever/                # 向量检索模块
-│   ├── build_faiss.py
-│   └── vector_store/
-│── prompts/                  # Prompt 模板
-│   └── entity_relation_prompt.txt
-│── weak_labeling/            # 弱标注模块
-│   ├── generate_labels.py
-│   ├── postprocess.py
-│── examples/                 # 使用示例
-│   └── demo.ipynb
-│── utils/                    # 工具函数
-│   ├── text_splitter.py
-│   ├── io_utils.py
+├── README.md
+├── main.py # 入口脚本：读取输入→检索→LLM→弱标注JSON
+├── retriever/ # 检索模块（需包含 retrieve_context.py / 索引文件等）
+│ └── vector_store/ # 向量库与索引存放（首次运行会在此生成/读取）
+├── prompt_template.py # Prompt 模板（导出 PROMPT_TEMPLATE）
+├── rules.py # 结果清洗与后处理（导出 clean_output）
+├── schema.py # 领域 schema（如 RELATION_TYPES 等）
+├── proxy.py # 代理设置（可选）
+└── downdata.py # 示例数据/知识库下载脚本（可选）
 
 flowchart LR
     A[原始文本] --> B[文本切分]
