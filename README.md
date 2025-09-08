@@ -24,3 +24,30 @@ conda activate rag_env
 
 # 安装依赖
 pip install -r requirements.txt
+
+RAG-Weakly-Supervised-Extraction/
+│── README.md                 # 项目说明文档
+│── requirements.txt          # 依赖库列表
+│── environment.yml           # conda 环境文件（可选）
+│── data/                     # 示例数据
+│── retriever/                # 向量检索模块
+│   ├── build_faiss.py
+│   └── vector_store/
+│── prompts/                  # Prompt 模板
+│   └── entity_relation_prompt.txt
+│── weak_labeling/            # 弱标注模块
+│   ├── generate_labels.py
+│   ├── postprocess.py
+│── examples/                 # 使用示例
+│   └── demo.ipynb
+│── utils/                    # 工具函数
+│   ├── text_splitter.py
+│   ├── io_utils.py
+
+flowchart LR
+    A[原始文本] --> B[文本切分]
+    B --> C[向量检索 (FAISS)]
+    C --> D[Prompt 构造与增强]
+    D --> E[LLM 推理生成]
+    E --> F[弱标注 JSON 输出]
+
